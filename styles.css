@@ -4,8 +4,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow: auto;
     color: #fff;
 }
 
@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     filter: blur(10px);
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: -2;
@@ -22,7 +22,7 @@ body {
 
 .overlay {
     background: rgba(0, 0, 0, 0.7);
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -30,6 +30,7 @@ body {
 
 .content {
     text-align: center;
+    padding: 20px;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -127,4 +128,16 @@ h1 {
 .bot-card button:hover {
     background-color: #e84352;
     transform: translateY(-3px);
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .bot-card {
+        width: 100%;
+        max-width: 300px;
+    }
 }
